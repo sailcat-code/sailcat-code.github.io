@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>在Mac上搭建基于Github Pages服务和Hexo框架的个人博客 - Caviar&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="之前自己有一个基于Hexo搭建的博客，但是因为折腾了不知道多少次系统导致本地文件已经完全找不着了（悲
+正好趁着重建博客的机会发一弹搭建过程～
+本地配置
+强烈建议先完成本地配置再完成云端配置
+
+不然调,"> 
+    <meta name="author" content="Caviar Iris"> 
+    <link rel="alternative" href="atom.xml" title="Caviar&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Caviar&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://sailcat-code.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">在Mac上搭建基于Github Pages服务和Hexo框架的个人博客</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">在Mac上搭建基于Github Pages服务和Hexo框架的个人博客</h1>
+        <div class="stuff">
+            <span>八月 10, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">-教程</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>之前自己有一个基于Hexo搭建的博客，但是因为折腾了不知道多少次系统导致本地文件已经完全找不着了（悲</p>
+<p>正好趁着重建博客的机会发一弹搭建过程～</p>
+<h1 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h1><blockquote>
+<p><strong>强烈建议先完成本地配置</strong>再完成云端配置</p>
+<blockquote>
+<p>不然调试过程的痛苦是你无法想象的⁄(⁄ ⁄ ⁄ω⁄ ⁄ ⁄)⁄</p>
+</blockquote>
+</blockquote>
+<h2 id="创建本地文件夹"><a href="#创建本地文件夹" class="headerlink" title="创建本地文件夹"></a>创建本地文件夹</h2><p>在电脑上随便找个地方新建一个文件夹（名字里最好不要有中文或者奇怪的字符）<br>只要确保你能找到它就行</p>
+<p>我直接放在了桌面上<br><img src="/img/Blog_config_new_folder.png" alt="新建文件夹" title="New Folder"></p>
+<h2 id="安装Hexo框架"><a href="#安装Hexo框架" class="headerlink" title="安装Hexo框架"></a>安装Hexo框架</h2><p>接下来在文件夹的位置新建一个终端窗口<br>这里演示两种方法（知道如何操作请直接跳过）</p>
+<hr>
+<h3 id="1-UI法-小白福利"><a href="#1-UI法-小白福利" class="headerlink" title="1.UI法(小白福利)"></a>1.UI法(小白福利)</h3><h4 id="开启服务"><a href="#开启服务" class="headerlink" title="开启服务"></a>开启服务</h4><p>（已经开启了这个服务的可以略过）<br>打开设置，找到“键盘”，在里面找到“快捷键”，在左侧菜单中选择“服务”，在右边的菜单里找到“新建位于文件夹位置的终端窗口”并勾选</p>
+<p>首先找到目标文件夹<br>右键它<br>在右键菜单中找到“服务”<br>然后在二级菜单中找到</p>
+<h3 id="2-装X法"><a href="#2-装X法" class="headerlink" title="2.装X法"></a>2.装X法</h3><blockquote>
+<p>既然乔老爷子发明了UI这么好用的东西，那我们为什么还用命令行呢？<br>——好！说得太好了！所以我选命令行[doge]<br>不为别的，只为装X。 </p>
+</blockquote>
+<p>首先打开“终端”App<br>然后把目标文件夹拖动到终端中来获取它的路径<br><img src="/img/Blog_config_new_terminal.png" alt="新建终端1" title="New Terminal"><br>再在路径前加上”cd”指令<br>注意”cd”与路径之间有一个空格<br><img src="/img/Blog_config_new_terminal2.png" alt="新建终端2" title="New Terminal2"><br>然后按回车<br>效果应该是：<br><img src="/img/Blog_config_new_terminal3.png" alt="新建终端3" title="New Terminal3"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci='104120f26f73069402ab'
+        data-cs='3ccb86434d742c138273db62ccf5134a525fe57c'
+        data-r='sailcat-code.github.io'
+        data-o='sailcat-code'
+        data-a='sailcat-code'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">本地配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">1.1.</span> <span class="toc-text">创建本地文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Hexo%E6%A1%86%E6%9E%B6"><span class="toc-number">1.2.</span> <span class="toc-text">安装Hexo框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-UI%E6%B3%95-%E5%B0%8F%E7%99%BD%E7%A6%8F%E5%88%A9"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.UI法(小白福利)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">开启服务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%A3%85X%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.装X法</span></a></li></ol></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'sailcat-code.github.io',
+        owner: 'sailcat-code',
+        admin: '',
+        id: ,
+        labels: ''.split(',').filter(l => l),
+        perPage: ,
+        pagerDirection: '',
+        createIssueManually: ,
+        distractionFreeMode: false
+      })
+      gitalk.render('gitalk-container')
+</script>
+
+
+
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
